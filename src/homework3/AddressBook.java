@@ -10,7 +10,7 @@ public class AddressBook {
     }
 
     public boolean isSame(String name) {
-        return name == name;
+        return name.equals(this.name);
     }
 
     public String toString() {
@@ -26,8 +26,9 @@ public class AddressBook {
     public static AddressBook findByName(String name, int count, AddressBook [] books) {
         AddressBook book = null;
         for(int i=0; i<count;i++){
-            if(books[i].name.equals(name)){
+            if(books[i].isSame(name)){
                 book = books[i];
+                break;
             }
         }
         return book;//Implement this function
